@@ -1,0 +1,6 @@
+<%= form_for(@invoice, url: { action: 'create' }) do |f| %>
+  <%= f.nested_fields_for :line_items  do |ff| %>
+    <%= ff.number_field :net_amount %>
+  <% end %>
+  <%= f.add_nested_fields_link :line_items, 'Add Line Item' %>
+<% end %>
